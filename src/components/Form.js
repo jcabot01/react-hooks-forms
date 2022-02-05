@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Form() {
-  const [firstName, setFirstName] = useState("John");
-  const [lastName, setLastName] = useState("Henry");
-
+//take in props from ParentComponent, refer to all props in the JSX rendering below
+function Form({
+  firstName,
+  lastName,
+  handleFirstNameChange,
+  handleLastNameChange,
+})  {
   return (
     <form>
-      <input type="text" value={firstName} />
-      <input type="text" value={lastName} />
+      <input type="text" onChange={handleFirstNameChange} value={firstName} />
+      <input type="text" onChange={handleLastNameChange} value={lastName} />
       <button type="submit">Submit</button>
     </form>
   );
